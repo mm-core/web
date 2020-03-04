@@ -63,7 +63,9 @@
 		"suppressImplicitAnyIndexErrors": true,
 		"traceResolution": false,
 		"typeRoots": [],
-		"types": [],
+		"types": [
+			"node"
+		],
 		"watch": false
 	}
 }

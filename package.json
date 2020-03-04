@@ -1,7 +1,7 @@
 {
-	"name": "@mmstudio/base",
+	"name": "@mmstudio/web",
 	"version": "1.0.0",
-	"description": "$desc",
+	"description": "web frame work",
 	"scripts": {
 		"test": "npm run build && karma start --single-run",
 		"watch": "tsc -w & karma start",
@@ -37,8 +37,13 @@
 		}
 	],
 	"license": "MIT",
-	"dependencies": {},
+	"peerDependencies": {
+		"@mmstudio/on": "*",
+		"node-html-parser": "*"
+	},
 	"devDependencies": {
+		"@mmstudio/on": "latest",
+		"@types/node": "latest",
 		"@typescript-eslint/eslint-plugin": "latest",
 		"@typescript-eslint/parser": "latest",
 		"chai": "latest",
@@ -51,6 +56,7 @@
 		"karma-mocha": "latest",
 		"karma-webpack": "latest",
 		"mocha": "latest",
+		"node-html-parser": "latest",
 		"typescript": "next",
 		"webpack": "latest",
 		"webpack-cli": "latest"
