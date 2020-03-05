@@ -6,8 +6,8 @@ export default function init(data: any, actions: IActions, events: IEvents) {
 	function fire(action: string, ...args: any[]) {
 		const fun = actions[action];
 		if (fun) {
-			const feidao_data = { fire, data } as any;
-			return Promise.resolve(fun(feidao_data, ...args));
+			const mm_data = { fire, data } as any;
+			return Promise.resolve(fun(mm_data, ...args));
 		}
 		return Promise.resolve();
 	}

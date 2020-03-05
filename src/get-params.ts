@@ -1,8 +1,8 @@
 import { HTMLElement as NHTMLElement } from 'node-html-parser';
 
-const FD_PARAMS_FLAG = 'data-feidao-props';
+const PARAMS_FLAG = 'data-mm-props';
 
 export default function get_params(node: HTMLElement | NHTMLElement) {
-	const params_str = node.attributes[FD_PARAMS_FLAG];
+	const params_str = node.attributes[PARAMS_FLAG];
 	return params_str ? JSON.parse(`${params_str}`) : {};
 }

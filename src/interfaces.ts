@@ -10,7 +10,7 @@ export interface IHandle {
 	destroy(this: IHandle): void;
 }
 
-export interface IFeidaoAiBrowserComponent {
+export interface IAiBrowserComponent {
 	readonly data: {
 		readonly [attr: string]: any;
 		readonly no: string;
@@ -23,7 +23,7 @@ export interface IFeidaoAiBrowserComponent {
 	emit(event: string, ...args: any[]): Promise<any>;
 }
 
-export interface IFeidaoAiBrowserPage {
+export interface IAiBrowserPage {
 	readonly data: {
 		readonly [attr: string]: any;
 		readonly params: { [key: string]: any };

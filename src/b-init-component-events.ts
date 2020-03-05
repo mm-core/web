@@ -1,14 +1,14 @@
 import on, { IHandle } from '@mmstudio/on';
 
 const reg = /\s*([^\s:]*)\s*:\s*([^:\s]*)\s*/;
-const FD_ACTIONS_FLAG = 'data-feidao-actions';
+const ACTIONS_FLAG = 'data-mm-actions';
 
 export default function init_events(emit: (event: string, ...args: any[]) => Promise<any> | undefined) {
 	return (node: HTMLElement | DocumentFragment) => {
-		const ns = Array.from(node.querySelectorAll<HTMLElement>(`[${FD_ACTIONS_FLAG}]`));
+		const ns = Array.from(node.querySelectorAll<HTMLElement>(`[${ACTIONS_FLAG}]`));
 		ns.push(node as HTMLElement);
 		return ns.reduce((handles, n) => {
-			const attr = n.getAttribute(FD_ACTIONS_FLAG);
+			const attr = n.getAttribute(ACTIONS_FLAG);
 			if (attr) {
 				const events = attr.split(',');
 				return handles.concat(events.map((e) => {
