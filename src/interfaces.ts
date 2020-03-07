@@ -45,7 +45,6 @@ export interface ICommonParams {
 	params: any;
 	query: any;
 	remote_address: string;
-	spaceid: string;
 	url: string;
 	[key: string]: any;
 }
