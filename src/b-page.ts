@@ -1,6 +1,6 @@
 import init_ai from './b-ai';
 import { IActions, IEvents } from './interfaces';
-import get_query from './b-get-query';
+import get_query from './get-query';
 import init_events from './b-init-win-event';
 
 const EVENTS_INIT = 'mm-events-init';
