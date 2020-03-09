@@ -6,6 +6,9 @@ const ACTIONS_FLAG = 'data-mm-actions';
 export default function init_events(emit: (event: string, ...args: any[]) => Promise<any> | undefined) {
 	return (node: HTMLElement | DocumentFragment) => {
 		const ns = Array.from(node.querySelectorAll<HTMLElement>(`[${ACTIONS_FLAG}]`));
+		if (!(node instanceof DocumentFragment)) {
+			ns.push(node);
+		}
 		ns.push(node as HTMLElement);
 		return ns.reduce((handles, n) => {
 			const attr = n.getAttribute(ACTIONS_FLAG);
