@@ -1,6 +1,6 @@
 {
 	"name": "@mmstudio/web",
-	"version": "1.0.202003081141",
+	"version": "1.0.202003090929",
 	"description": "web frame work",
 	"scripts": {
 		"test": "npm run build && karma start --single-run",
