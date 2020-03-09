@@ -1,7 +1,7 @@
 import { IEvents } from './interfaces';
 
-export default function get_emit(events: IEvents, fire: (action: string, ...args: any[]) => Promise<any>) {
-	return function emit(type: string, ...args: any[]) {
+export default function get_emit(events: IEvents, fire: (action: string, ...args: unknown[]) => Promise<unknown>) {
+	return function emit(type: string, ...args: unknown[]) {
 		const action = events[type];
 		if (action) {
 			return fire(action, ...args);

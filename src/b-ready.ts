@@ -34,7 +34,7 @@ function ready_fun() {
 }
 
 if (!ready) {
-	if (document.readyState === 'complete' || (document.readyState !== 'loading' && !(document.documentElement as any).doScroll)) {
+	if (document.readyState === 'complete' || (document.readyState !== 'loading' && !(document.documentElement as unknown as { doScroll: unknown; }).doScroll)) {
 		// DOMContentLoaded has emited
 		ready_fun();
 	} else {
@@ -44,7 +44,7 @@ if (!ready) {
 	}
 }
 
-export function dom_ready(callback: (...args: any[]) => void): void {
+export function dom_ready(callback: (...args: unknown[]) => void): void {
 	readyQueue.push(callback);
 	if (ready) {
 		processQueue();

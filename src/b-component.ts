@@ -16,7 +16,7 @@ interface IAiBrowserComponent {
 	emit(event: string, ...args: unknown[]): Promise<unknown>;
 }
 
-export default async function init(no: string, events: IEvents, actions: IActions, url: string, query: any, data = {}) {
+export default async function init(no: string, events: IEvents, actions: IActions, url: string, query: object, data = {}) {
 	await ready();
 	const node_list = Array.from(window.document.querySelectorAll<HTMLElement>(no));
 	if (!node_list || node_list.length === 0) {
@@ -28,7 +28,7 @@ export default async function init(no: string, events: IEvents, actions: IAction
 			...query,
 			...get_params(node)
 		});
-		const ai = (node as any).mm = init_ai({ ...data, local: {}, no, node, params, url }, actions, events, init_events) as IAiBrowserComponent;
+		const ai = (node as unknown as { mm: unknown; }).mm = init_ai({ ...data, local: {}, no, node, params, url }, actions, events, init_events) as IAiBrowserComponent;
 		ai.parse_event(node);
 		await ai.emit(EVENTS_INIT);
 		lazyload_picture(node);	// 延迟加载组件中html中的静态图片资源

@@ -5,7 +5,7 @@ import get_params from './get-params';
 
 const EVENTS_INIT = 'mm-events-init';
 
-export default function init(no: string, html: string, events: IEvents, actions: IActions, doc: HTMLElement, url: string, msg: unknown, headers: object, query: any, data = {}) {
+export default function init(no: string, html: string, events: IEvents, actions: IActions, doc: HTMLElement, url: string, msg: unknown, headers: object, query: object, data = {}) {
 	const node_list = doc.querySelectorAll(no);
 	return Promise.all(node_list.map((node) => {
 		if (html) {

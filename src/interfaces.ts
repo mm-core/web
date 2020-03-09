@@ -3,5 +3,5 @@ export interface IEvents {
 }
 
 export interface IActions {
-	[atom: string]: (...args: any[]) => Promise<unknown> | unknown;
+	[atom: string]: (...args: unknown[]) => Promise<unknown> | unknown;
 }
