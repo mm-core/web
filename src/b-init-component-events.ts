@@ -9,7 +9,6 @@ export default function init_events(emit: (event: string, ...args: any[]) => Pro
 		if (!(node instanceof DocumentFragment)) {
 			ns.push(node);
 		}
-		ns.push(node as HTMLElement);
 		return ns.reduce((handles, n) => {
 			const attr = n.getAttribute(ACTIONS_FLAG);
 			if (attr) {
