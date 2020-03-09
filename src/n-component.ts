@@ -7,7 +7,7 @@ const EVENTS_INIT = 'mm-events-init';
 
 export default function init(no: string, html: string, events: IEvents, actions: IActions, doc: HTMLElement, url: string, msg: unknown, headers: object, query: any, data = {}) {
 	const node_list = doc.querySelectorAll(no);
-	return node_list.map((node) => {
+	return Promise.all(node_list.map((node) => {
 		if (html) {
 			node.set_content(html);
 		}
@@ -24,5 +24,5 @@ export default function init(no: string, html: string, events: IEvents, actions:
 			});
 		}
 		return Promise.resolve();
-	});
+	}));
 }
