@@ -1,11 +1,11 @@
 import { HTMLElement } from 'node-html-parser';
 import init_ai from './n-ai';
-import { IActions, ICommonParams, IEvents, IHeaders } from './interfaces';
+import { IActions, IEvents } from './interfaces';
 import get_params from './get-params';
 
 const EVENTS_INIT = 'mm-events-init';
 
-export default function init(no: string, html: string, events: IEvents, actions: IActions, doc: HTMLElement, url: string, msg: ICommonParams, headers: IHeaders, query: any, data = {}) {
+export default function init(no: string, html: string, events: IEvents, actions: IActions, doc: HTMLElement, url: string, msg: unknown, headers: object, query: any, data = {}) {
 	const node_list = doc.querySelectorAll(no);
 	return node_list.map((node) => {
 		if (html) {

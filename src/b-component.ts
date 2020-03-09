@@ -1,11 +1,20 @@
 import on from '@mmstudio/on';
 import init_ai from './b-ai';
-import { IActions, IAiBrowserComponent, IEvents } from './interfaces';
+import { IActions, IEvents } from './interfaces';
 import get_params from './get-params';
 import init_events from './b-init-component-events';
 import ready from './b-ready';
 
 const EVENTS_INIT = 'mm-events-init';
+
+interface IHandle {
+	destroy(this: IHandle): void;
+}
+
+interface IAiBrowserComponent {
+	parse_event(node: HTMLElement | DocumentFragment): IHandle[];
+	emit(event: string, ...args: unknown[]): Promise<unknown>;
+}
 
 export default async function init(no: string, events: IEvents, actions: IActions, url: string, query: any, data = {}) {
 	await ready();
