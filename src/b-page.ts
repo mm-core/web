@@ -7,7 +7,7 @@ const EVENTS_INIT = 'mm-events-init';
 
 export default async function init(events: IEvents, actions: IActions, ...components: ((url: string, query: any) => any)[]) {
 	const url = location.href;
-	const query = get_query(url) as any;
+	const query = get_query(url);
 	const ai = (window as any).mm = init_ai({ url, params: Object.freeze(query) }, actions, events);
 	init_events(events, ai.emit);
 	await ai.emit(EVENTS_INIT);
