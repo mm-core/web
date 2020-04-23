@@ -3,10 +3,5 @@
 		"name": "@mmstudio/web",
 		"location": "@mmstudio/web/dist",
 		"main": "main"
-	},
-	{
-		"name": "node-html-parser",
-		"location": "node-html-parser/dist/umd",
-		"main": "index"
 	}
 ]

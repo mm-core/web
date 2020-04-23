@@ -8,9 +8,8 @@
 		"clean": "del-cli ./dist/",
 		"lint": "eslint ./src/**/*.ts",
 		"compile-amd": "tsc -m amd -d false --outFile ./dist/main.js",
-		"compile-cjs": "tsc -m commonjs",
-		"compile-esm": "tsc -d false --outDir ./dist/esm/",
-		"compile": "npm run compile-esm && npm run compile-amd && npm run compile-cjs",
+		"compile-esm": "tsc -d false --outDir ./dist/",
+		"compile": "npm run compile-esm && npm run compile-amd",
 		"build": "npm run clean && npm run lint && npm run compile",
 		"up": "git pull git@github.com:mm-core/base.git amd"
 	},
@@ -20,7 +19,7 @@
 	},
 	"homepage": "https://mm-works.github.io",
 	"main": "dist/index.js",
-	"module": "dist/esm/index.js",
+	"module": "dist/index.js",
 	"types": "dist/index.d.ts",
 	"keywords": [
 		"mm",
@@ -44,8 +43,7 @@
 	],
 	"license": "MIT",
 	"peerDependencies": {
-		"@mmstudio/on": "*",
-		"node-html-parser": "*"
+		"@mmstudio/on": "*"
 	},
 	"devDependencies": {
 		"@mmstudio/on": "latest",
@@ -63,7 +61,6 @@
 		"karma-mocha": "latest",
 		"karma-webpack": "latest",
 		"mocha": "latest",
-		"node-html-parser": "latest",
 		"typescript": "next",
 		"webpack": "latest",
 		"webpack-cli": "latest"
