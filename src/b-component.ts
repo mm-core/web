@@ -1,7 +1,7 @@
 import on from '@mmstudio/on';
 import init_ai from './b-ai';
 import { IActions, IEvents } from './interfaces';
-import get_params from './get-params';
+import get_params from './b-get-params';
 import init_events from './b-init-component-events';
 import ready from './b-ready';
 
