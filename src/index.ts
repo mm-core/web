@@ -1,2 +1,2 @@
-export { default as bp } from './b-page';
-export { default as bc } from './b-component';
+export { default as page } from './b-page';
+export { default as component } from './b-component';
