@@ -8,7 +8,7 @@
 		"clean": "del-cli ./dist/",
 		"lint": "eslint ./src/**/*.ts",
 		"compile-amd": "tsc -m amd -d false --outFile ./dist/main.js",
-		"compile-esm": "tsc -d false --outDir ./dist/",
+		"compile-esm": "tsc",
 		"compile": "npm run compile-esm && npm run compile-amd",
 		"build": "npm run clean && npm run lint && npm run compile",
 		"up": "git pull git@github.com:mm-core/base.git amd"
