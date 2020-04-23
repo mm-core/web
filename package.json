@@ -1,6 +1,6 @@
 {
 	"name": "@mmstudio/web",
-	"version": "1.0.202004171038",
+	"version": "1.0.202004231730",
 	"description": "web frame work",
 	"scripts": {
 		"test": "npm run build",
